@@ -1,0 +1,32 @@
+.container {
+    background-color: #C4C4C4;
+    width: 30%;
+    height: 60%;
+    border-radius: 20px;
+    margin: auto;
+    display: flex;
+}
+
+.screen {
+    display: block;
+    width: 80%;
+    height: 10%;
+    background-color: white;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.buttons {
+    width: 80%;
+    height: 80%;
+}
+
+.buttons .button {
+    display: inline-block;
+    width: 20%;
+    height: 10%;
+    background-color: white;
+    border-radius: 5px;
+}
