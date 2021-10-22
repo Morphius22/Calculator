@@ -1,32 +1,38 @@
 .container {
     background-color: #C4C4C4;
-    width: 30%;
+    display: flex;
+    width: 25%;
     height: 60%;
     border-radius: 20px;
     margin: auto;
-    display: flex;
+    padding-top: 10px;
+    flex-direction: column;
 }
 
 .screen {
     display: block;
-    width: 80%;
-    height: 10%;
     background-color: white;
     justify-content: center;
     padding: 10px 20px;
-    margin: 20px;
+    margin: 20px 60px;
     border-radius: 5px;
+}
+
+div {
+    display: block;
 }
 
 .buttons {
-    width: 80%;
-    height: 80%;
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .buttons .button {
-    display: inline-block;
     width: 20%;
-    height: 10%;
+    height: 50px;
     background-color: white;
     border-radius: 5px;
+    margin: 10px;
+    text-align: center;
 }
