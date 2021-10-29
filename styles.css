@@ -14,9 +14,14 @@
     display: block;
     background-color: white;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 40px 20px;
     margin: 5% 10%;
     border-radius: 5px;
+}
+
+.displayedNum {
+    display: inline-block;
+    margin: 0px;
 }
 
 div {
@@ -29,7 +34,16 @@ div {
     margin-bottom: 30px;
 }
 
-.buttons .button {
+.buttons .numButton {
+    width: 15%;
+    height: 50px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+}
+
+.buttons .operator {
     width: 15%;
     height: 50px;
     background-color: white;
