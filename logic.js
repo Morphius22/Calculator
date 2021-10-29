@@ -25,3 +25,16 @@ function operate (operator, num1, num2) {
         return divide(num1,num2);
     }
 }
+
+function updateScreen (num) {
+    const screen = document.querySelector(".screen");
+    const enteredNum = document.createElement("p");
+    enteredNum.textContent = num;
+    screen.append(enteredNum);
+
+}
+
+const buttons = document.querySelectorAll(".button");
+buttons.forEach(button => button.addEventListener("click", function(e) {
+    updateScreen(this.value);
+}));
