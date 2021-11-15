@@ -61,18 +61,17 @@ function buttonClick (num1, num2, operator) {
             num1 += this.value;
         }
         updateScreen(num1);
-        console.log(num1);
-        console.log(typeof(num1));
-        console.log(num2);
-        console.log(typeof(num2));
+        console.log('the value of num1 is: ' + num1);
+        console.log('the value of num2 is: ' + num2);
+        console.log('the value of operator is: ' + operator)
+
     }));
 
     const operatorButtons = document.querySelectorAll(".operator");
     operatorButtons.forEach(button => button.addEventListener("click", function(e) {
         if (this.id == 'equals') {
             let finalValue = operate (operator, num1, num2);
-            console.log('this is the final value!')
-            console.log(finalValue);
+            console.log('this is the final value: ' + finalValue)
             num1 = null;
             num2 = null;
             operator = null;
@@ -84,12 +83,8 @@ function buttonClick (num1, num2, operator) {
             if (removedNum != null) {
                 removedNum.remove();
             }
-            console.log(num1);
-            console.log(operator);
         } else {
             operator = this.id;
-            console.log(operator);
-            console.log(typeof(operator));
         }
     } ));
 
