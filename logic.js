@@ -53,14 +53,18 @@ function buttonClick (num1, num2, operator) {
     numButtons.forEach(button => button.addEventListener("click", function(e) {
         if (num1 == null) {
             num1 = this.value;
+            updateScreen(num1);
         } else if (num2 != null) {
             num2 += this.value;
+            updateScreen(num2);
         } else if (operator != null && num2 == null) {
             num2 = this.value;
+            updateScreen(num1);
         } else {
             num1 += this.value;
+            updateScreen(num1);
         }
-        updateScreen(num1);
+        
         console.log('the value of num1 is: ' + num1);
         console.log('the value of num2 is: ' + num2);
         console.log('the value of operator is: ' + operator)
@@ -72,9 +76,11 @@ function buttonClick (num1, num2, operator) {
         if (this.id == 'equals') {
             let finalValue = operate (operator, num1, num2);
             console.log('this is the final value: ' + finalValue)
+            updateScreen(finalValue);
             num1 = null;
             num2 = null;
             operator = null;
+            finalValue = null;
         } else if (this.id == 'clear') {
             num1 = null;
             num2 = null;
@@ -83,8 +89,16 @@ function buttonClick (num1, num2, operator) {
             if (removedNum != null) {
                 removedNum.remove();
             }
-        } else {
+        } else if (operator != null) {
+            let finalValue = operate (operator, num1, num2);
+            console.log('this is the final value!')
+            console.log(finalValue);
+            num1 = finalValue;
+            num2 = null;
             operator = this.id;
+            updateScreen(finalValue);
+        } else {
+            operator = this.id; 
         }
     } ));
 
