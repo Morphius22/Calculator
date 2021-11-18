@@ -76,11 +76,10 @@ function buttonClick (num1, num2, operator) {
         if (this.id == 'equals') {
             let finalValue = operate (operator, num1, num2);
             console.log('this is the final value: ' + finalValue)
-            updateScreen(finalValue);
-            num1 = null;
+            updateScreen(finalValue.toFixed(2));
+            num1 = finalValue;
             num2 = null;
             operator = null;
-            finalValue = null;
         } else if (this.id == 'clear') {
             num1 = null;
             num2 = null;
@@ -96,7 +95,7 @@ function buttonClick (num1, num2, operator) {
             num1 = finalValue;
             num2 = null;
             operator = this.id;
-            updateScreen(finalValue);
+            updateScreen(finalValue.toFixed(2));
         } else {
             operator = this.id; 
         }
@@ -113,6 +112,9 @@ function operatorButtons(num1, num2, operator) {
             let finalValue = operate (operator, num1, num2);
             console.log('this is the final value!')
             console.log(finalValue);
+            num1 = finalValue;
+            num2 = null;
+            operator = null;
         } else if (this.id == 'clear') {
             num1 = 0;
             num2 = 0;

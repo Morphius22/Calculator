@@ -46,8 +46,16 @@ div {
 .buttons .operator {
     width: 15%;
     height: 50px;
-    background-color: white;
+    background-color: rgb(132, 172, 240);
     border-radius: 5px;
     margin: 10px;
     text-align: center;
+}
+
+.buttons #clear {
+    background-color: rgb(230, 84, 84);
+}
+
+.buttons #equals {
+    background-color: rgb(95, 238, 112);
 }
