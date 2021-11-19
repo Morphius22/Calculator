@@ -20,7 +20,13 @@ function divide (num1,num2) {
 
 //performs the calculation specified by an operator. 
 function operate (operator, num1, num2) {
-    if (operator == 'add') {
+    if (num2 == '0' && operator == 'divide') {
+        updateScreen("you divided by 0 dumbass")
+        num1 = null;
+        num2 = null;
+        operator = null;
+        finalValue = null;
+    } else if (operator == 'add') {
         return add(num1,num2);
     } else if (operator == 'subtract') {
         return subtract(num1,num2);
@@ -116,9 +122,10 @@ function operatorButtons(num1, num2, operator) {
             num2 = null;
             operator = null;
         } else if (this.id == 'clear') {
-            num1 = 0;
-            num2 = 0;
-            operator = 0;
+            num1 = null;
+            num2 = null;
+            operator = null;
+            finalValue = null;
             let removedNum = document.querySelector(".displayedNum");
             if (removedNum != null) {
                 removedNum.remove();
