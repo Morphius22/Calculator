@@ -25,7 +25,7 @@ function operate (operator, num1, num2) {
         num1 = null;
         num2 = null;
         operator = null;
-        finalValue = null;
+        return finalValue = null;
     } else if (operator == 'add') {
         return add(num1,num2);
     } else if (operator == 'subtract') {
@@ -82,10 +82,17 @@ function buttonClick (num1, num2, operator) {
         if (this.id == 'equals') {
             let finalValue = operate (operator, num1, num2);
             console.log('this is the final value: ' + finalValue)
-            updateScreen(finalValue.toFixed(2));
-            num1 = finalValue;
-            num2 = null;
-            operator = null;
+            if (operator == "divide" && num2 == '0'){
+                num1 = null;
+                num2 = null;
+                finalValue = null;
+                operator = null;
+            } else {
+                updateScreen(finalValue.toFixed(2));
+                num1 = finalValue;
+                num2 = null;
+                operator = null;
+            }
         } else if (this.id == 'clear') {
             num1 = null;
             num2 = null;
@@ -111,34 +118,34 @@ function buttonClick (num1, num2, operator) {
 
 
 //Adds a click event to all operator buttons on the calculator 
-function operatorButtons(num1, num2, operator) {
-    const operatorButtons = document.querySelectorAll(".operator");
-    operatorButtons.forEach(button => button.addEventListener("click", function(e) {
-        if (this.id = 'equals') {
-            let finalValue = operate (operator, num1, num2);
-            console.log('this is the final value!')
-            console.log(finalValue);
-            num1 = finalValue;
-            num2 = null;
-            operator = null;
-        } else if (this.id == 'clear') {
-            num1 = null;
-            num2 = null;
-            operator = null;
-            finalValue = null;
-            let removedNum = document.querySelector(".displayedNum");
-            if (removedNum != null) {
-                removedNum.remove();
-            }
-            console.log(num1);
-            console.log(operator);
-        } else {
-            let operator = this.id;
-            console.log(operator);
-            console.log(typeof(operator));
-        }
-    } ))
-}
+// function operatorButtons(num1, num2, operator) {
+//     const operatorButtons = document.querySelectorAll(".operator");
+//     operatorButtons.forEach(button => button.addEventListener("click", function(e) {
+//         if (this.id = 'equals') {
+//             let finalValue = operate (operator, num1, num2);
+//             console.log('this is the final value!')
+//             console.log(finalValue);
+//             num1 = finalValue;
+//             num2 = null;
+//             operator = null;
+//         } else if (this.id == 'clear') {
+//             num1 = null;
+//             num2 = null;
+//             operator = null;
+//             finalValue = null;
+//             let removedNum = document.querySelector(".displayedNum");
+//             if (removedNum != null) {
+//                 removedNum.remove();
+//             }
+//             console.log(num1);
+//             console.log(operator);
+//         } else {
+//             let operator = this.id;
+//             console.log(operator);
+//             console.log(typeof(operator));
+//         }
+//     } ))
+// }
 
 
 
