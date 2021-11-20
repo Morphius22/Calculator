@@ -117,38 +117,6 @@ function buttonClick (num1, num2, operator) {
 }
 
 
-//Adds a click event to all operator buttons on the calculator 
-// function operatorButtons(num1, num2, operator) {
-//     const operatorButtons = document.querySelectorAll(".operator");
-//     operatorButtons.forEach(button => button.addEventListener("click", function(e) {
-//         if (this.id = 'equals') {
-//             let finalValue = operate (operator, num1, num2);
-//             console.log('this is the final value!')
-//             console.log(finalValue);
-//             num1 = finalValue;
-//             num2 = null;
-//             operator = null;
-//         } else if (this.id == 'clear') {
-//             num1 = null;
-//             num2 = null;
-//             operator = null;
-//             finalValue = null;
-//             let removedNum = document.querySelector(".displayedNum");
-//             if (removedNum != null) {
-//                 removedNum.remove();
-//             }
-//             console.log(num1);
-//             console.log(operator);
-//         } else {
-//             let operator = this.id;
-//             console.log(operator);
-//             console.log(typeof(operator));
-//         }
-//     } ))
-// }
-
-
-
 function runCalculator () {
     let num1 = null;
     let num2 = null;
