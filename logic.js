@@ -44,12 +44,11 @@ function updateScreen (num) {
         removedNum.remove();
     }
         
-    const screen = document.querySelector(".screen");
+    const screen = document.querySelector("#number");
     const enteredNum = document.createElement("p");
     enteredNum.classList.add('displayedNum');
     enteredNum.textContent = num;
     screen.append(enteredNum);
-    
 }
 
 //Adds a click event to all numbers on the calculator
@@ -65,7 +64,7 @@ function buttonClick (num1, num2, operator) {
             updateScreen(num2);
         } else if (operator != null && num2 == null) {
             num2 = this.value;
-            updateScreen(num1);
+            updateScreen(num2);
         } else {
             num1 += this.value;
             updateScreen(num1);
@@ -101,7 +100,15 @@ function buttonClick (num1, num2, operator) {
             if (removedNum != null) {
                 removedNum.remove();
             }
-        } else if (operator != null) {
+        } else if (this.id == 'back' && num2 != null) {
+            num2 = num2.slice(0, -1);
+            updateScreen(num2);
+        } else if (this.id == 'back' && num2 == null) {
+            num1 = num1.slice(0,-1);
+            updateScreen(num1);
+        }
+        
+        else if (operator != null) {
             let finalValue = operate (operator, num1, num2);
             console.log('this is the final value!')
             console.log(finalValue);

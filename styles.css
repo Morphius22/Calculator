@@ -1,5 +1,5 @@
 .container {
-    background-color: #C4C4C4;
+    background-color: #000000;
     display: flex;
     width: 25%;
     height: 70%;
@@ -14,7 +14,7 @@
     display: block;
     background-color: white;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
     margin: 5% 10%;
     border-radius: 5px;
 }
@@ -37,30 +37,41 @@ div {
 .buttons .numButton {
     width: 21.5%;
     height: 60px;
-    background-color: white;
+    background-color: rgb(197, 195, 195);
     border-radius: 5px;
     text-align: center;
     margin: 1% 1%;
+    font-size: 20px;
 }
 
 .buttons .operator {
     width: 21.5%;
     height: 60px;
-    background-color: rgb(132, 172, 240);
+    background-color: rgb(4, 76, 201);
     border-radius: 5px;
     text-align: center;
     margin: 1% 1%;
+    font-size: 20px;
 }
 
 .buttons #clear {
-    background-color: rgb(230, 84, 84);
+    background-color: rgb(255, 0, 0);
 }
 
 .buttons #equals {
-    background-color: rgb(95, 238, 112);
+    background-color: rgb(0, 255, 30);
     width: 46.5%;
+}
+
+.buttons #back {
+    background-color: rgb(197, 195, 195);
 }
 
 .buttons #zero {
     width: 46.5%;
+}
+
+p {
+    margin: 0px;
+    font-size: 30px;
 }
